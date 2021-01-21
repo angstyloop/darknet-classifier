@@ -30,7 +30,7 @@ void predict_classifier_multi(char *datacfg, char *cfgfile, char *weightfile, ch
             strncpy(input, filename, 256);
             printf("%s\n", input);
             image im = load_image_color(input, 0, 0);
-            printf("%d x %d\n", im.w, im.h);
+            //printf("%d x %d\n", im.w, im.h);
             image r = letterbox_image(im, net->w, net->h);
             float  *X = r.data;
             float *predictions = network_predict(net, X);
