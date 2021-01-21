@@ -1,6 +1,4 @@
 #!/bin/bash
-echo classifying images with darknet
-echo
 for args in args/*.classify_args; do
     args_name=${args#args/} ## remove prefix
     args_name=${args_name%.classify_args} ## remove suffix
