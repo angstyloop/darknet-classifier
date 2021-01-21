@@ -10,6 +10,8 @@ for dir in image_sets/*; do
         echo $DARKNET_CFG
         echo $DARKNET_WEIGHTS
         mkdir -p results
-        ./classify_topk $topk $dir/* > results/$args_name.${dir%%_*}.results
+        num=${dir#*/}
+        num=${num%%_*}
+        ./classify_topk $topk $dir/* > results/$args_name.$num.results
     done
 done
