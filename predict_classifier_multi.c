@@ -45,6 +45,7 @@ void predict_classifier_multi(char *datacfg, char *cfgfile, char *weightfile, ch
             free_image(im);
         }
     }
+
     double time3 = what_time_is_it_now();
 
     printf("Classified %d images in %f seconds (%f images per second).\n", n_files, time3 - time2, n_files/(time3-time2));
