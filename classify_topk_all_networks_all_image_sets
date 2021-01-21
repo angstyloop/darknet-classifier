@@ -1,7 +1,5 @@
 #!/bin/bash
 topk=$1
-echo classifying images with darknet
-echo
 for dir in image_sets/*; do
     for args in args/*.classify_args; do
         args_name=${args#args/} ## remove prefix
