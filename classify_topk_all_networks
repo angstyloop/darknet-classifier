@@ -1,0 +1,14 @@
+#!/bin/bash
+echo classifying images with darknet
+echo
+for args in args/*.classify_args; do
+    args_name=${args#args/} ## remove prefix
+    args_name=${args_name%.classify_args} ## remove suffix
+    echo $args #print path to args file 
+    source $args #import environment variables from args file
+    echo $DARKNET_DATA #print the args
+    echo $DARKNET_CLASSIFY
+    echo $DARKNET_WEIGHTS
+    mkdir -p results
+    ./classify_topk $* > results/$args_name.results
+done
